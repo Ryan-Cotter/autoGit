@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LOGFILE="/home/swarmmaster0/Sysadmin scripts/autoGit/cron_output.log"
-COUNTER_FILE="/home/swarmmaster0/Sysadmin scripts/autoGit/counter.txt"
+LOGFILE="/home/swarm/sysadmin_scripts/autoGit/cron_output.log"
+COUNTER_FILE="/home/swarm/sysadmin_scripts/autoGit/counter.txt"
 MAX_COMMITS=10
 
 # Choose a random number of commits from a weighted list
