@@ -1,21 +1,25 @@
 #!/bin/bash
+set -e
 
-set -e  # Exit on error
+LOGFILE="/home/swarm/sysadmin_scripts/autoGit/increment.log"
 
-# Go to project directory
-cd ~/Sysadmin\ scripts/autoGit || exit 1
+echo "$(date): Incrementing counter..." >> $LOGFILE
+cd /home/swarm.sysadmin_scripts/autoGit || exit 1
 
-# Create counter.txt if it doesn't exist
 if [ ! -f counter.txt ]; then
-  echo 0 > counter.txt
+  echo "0" > counter.txt
 fi
 
-# Increment the counter
 counter=$(cat counter.txt)
 ((counter++))
 echo "$counter" > counter.txt
 
-# Commit and push
+# Log the counter update
+echo "$(date): Counter updated to $counter" >> $LOGFILE
+
 git add counter.txt
 git commit -m "Auto increment: $counter"
-git push origin main  # or your branch
+git push origin main
+
+# Log the completion of the push
+echo "$(date): Git push completed" >> $LOGFILE
