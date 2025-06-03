@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /home/swarm/sysadmin_scripts/autoGit
+echo "Running from: $(pwd)" >> cron_output.log
 
 LOGFILE="/home/swarm/sysadmin_scripts/autoGit/cron_output.log"
 COUNTER_FILE="/home/swarm/sysadmin_scripts/autoGit/counter.txt"
