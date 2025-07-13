@@ -7,7 +7,7 @@ COUNTER_FILE="/home/swarm/sysadmin_scripts/autoGit/counter.txt"
 MAX_COMMITS=10
 
 # Choose a random number of commits from a weighted list
-commit_weights=(1 1 1 2 2 3 4 5 7 10)
+commit_weights=(1 1 1 1 2 2 2 3 3 4)
 commits=${commit_weights[$RANDOM % ${#commit_weights[@]}]}
 
 # Log the action
